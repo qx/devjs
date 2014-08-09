@@ -1,42 +1,99 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <style>
+        body {
+            font-family: sans-serif, Arial;
+            background-color: #ffffff;
+        }
+    </style>
+    <script type="text/javascript">
+        (function () {
+            var method;
+            var noop = function () {
+            };
+            var methods = [
+                'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+                'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+                'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+                'timeStamp', 'trace', 'warn'
+            ];
+            var length = methods.length;
+            var console = (window.console = window.console || {});
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+            while (length--) {
+                method = methods[length];
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+                // Only stub undefined methods.
+                if (!console[method]) {
+                    console[method] = noop;
+                }
+            }
+        }());
+    </script>
+</head>
+<!--<!DOCTYPE html>-->
+<!--&lt;!&ndash;[if lt IE 7]>-->
+<!--<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]&ndash;&gt;-->
+<!--&lt;!&ndash;[if IE 7]>-->
+<!--<html class="no-js lt-ie9 lt-ie8"> <![endif]&ndash;&gt;-->
+<!--&lt;!&ndash;[if IE 8]>-->
+<!--<html class="no-js lt-ie9"> <![endif]&ndash;&gt;-->
+<!--&lt;!&ndash;[if gt IE 8]>&lt;!&ndash;>-->
+<!--<html class="no-js"> &lt;!&ndash;<![endif]&ndash;&gt;-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+<!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--<title></title>-->
+<!--<meta name="description" content="">-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+<!--&lt;!&ndash; Place favicon.ico and apple-touch-icon.png in the root directory &ndash;&gt;-->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+<!--<link rel="stylesheet" href="css/normalize.css">-->
+<!--<link rel="stylesheet" href="css/main.css">-->
+<!--<script src="js/vendor/modernizr-2.6.2.min.js"></script>-->
+<!--</head>-->
+<body>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-    </body>
+
+<!-- Add your site or application content here -->
+<p>Hello world! This is HTML5 Boilerplate.</p>
+
+<button style="display:none" id="try-now-post" onclick="window.app.addTodo()">Try it Now</button><br/>
+
+
+
+
+<!--<br/>-->
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+<!--<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>-->
+<!--<script src="js/plugins.js"></script>-->
+<!--<script src="js/main.js"></script>-->
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<!--<script>-->
+<!--(function (b, o, i, l, e, r) {-->
+<!--b.GoogleAnalyticsObject = l;-->
+<!--b[l] || (b[l] =-->
+<!--function () {-->
+<!--(b[l].q = b[l].q || []).push(arguments)-->
+<!--});-->
+<!--b[l].l = +new Date;-->
+<!--e = o.createElement(i);-->
+<!--r = o.getElementsByTagName(i)[0];-->
+<!--e.src = '//www.google-analytics.com/analytics.js';-->
+<!--r.parentNode.insertBefore(e, r)-->
+<!--}(window, document, 'script', 'ga'));-->
+<!--ga('create', 'UA-XXXXX-X');-->
+<!--ga('send', 'pageview');-->
+<!--</script>-->
+
+<script src='lib/shred.bundle.js' type='text/javascript'></script>
+<script src='lib/swagger.js' type='text/javascript'></script>
+<script src='lib/sdk-init.js' type='text/javascript'></script>
+<script src='app.js' type='text/javascript'></script>
+</body>
 </html>
