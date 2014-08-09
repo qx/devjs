@@ -9,6 +9,19 @@ document.addEventListener("apiReady", function () {
 //    document.getElementById("try-now-update").setAttribute("style", "display:block");
 //    document.getElementById("update-results").innerHTML = "API Loaded";
 
+    window.app.postContent = function () {
+        var body = {
+            "record": [
+                {"ip": document.getElementById("post-content").value}
+            ]
+        };
+        window.df.apis.db.createRecords({"table_name": "adsinfo", "body": body}, function (response) {
+            document.getElementById("post-results").innerHTML = JSON.stringify(response);
+        }, function (response) {
+            document.getElementById("post-results").innerHTML = window.app.getErrorString(response);
+        });
+
+    };
     window.app.login = function () {
         var body = {
             email: document.getElementById("email").value,
